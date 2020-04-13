@@ -1,0 +1,32 @@
+{
+    "buildType" : {
+        "default" : "Debug",
+        "choices": {
+            "Debug" : {
+                "short": "Debug",
+                "long" : "Emit Debug Information",
+                "buildType": "Debug",
+                "settings": {
+                    "CMAKE_EXPORT_COMPILE_COMMANDS" : "ON"
+                }
+            },
+            "Release" : {
+                "short": "Release",
+                "long" : "Optimize Generated Code",
+                "buildType": "Release"
+            }
+        }
+    },
+    "boardType" : {
+        "default" : "STM32F4_Discovery",
+        "choices" : {
+            "STM32F4_Discovery" : {
+                "short" : "STM32F4 Discovery",
+                "long" : "Build for STM32F4 Discovery Board",
+                "settings" : {
+                    "STM32F4_BOARD" : "STM32F4_Discovery"
+                }
+            }
+        }
+    }
+}

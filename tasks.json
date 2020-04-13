@@ -1,0 +1,87 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Start OpenOCD (GDB Server)",
+            "type": "process",
+            "osx": {
+                "command": "make",
+                "args": [
+                    "gdbserver"
+                ]
+            },
+            "linux": {
+                "command": "openocd",
+                "args": [
+                    "-f",
+                    "/usr/share/openocd/scripts/board/stm32f4discovery.cfg",
+                    "-c",
+                    "gdb_port 4242",
+                    "-c",
+                    "telnet_port 4444"
+                ]
+            },
+            "windows": {
+                "command": "openocd",
+                "args": [
+                    "-f",
+                    "c:\\Program Files\\openocd-0.10.0\\scripts\\board\\stm32f4discovery.cfg",
+                    "-c",
+                    "gdb_port 4242",
+                    "-c",
+                    "telnet_port 4444"
+                ]
+            },
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "options": {
+                "cwd": "${workspaceRoot}/build"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Stop OpenOCD (GDB Server)",
+            "type": "shell",
+            "osx": {
+                "command": "killall",
+                "args": [
+                    "openocd"
+                ]
+            },
+            "linux": {
+                "command": "killall",
+                "args": [
+                    "openocd"
+                ]
+            },
+            "windows": {
+                "command": "killall",
+                "args": [
+                    "openocd"
+                ]
+            },
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "options": {
+                "cwd": "${workspaceRoot}/build"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
