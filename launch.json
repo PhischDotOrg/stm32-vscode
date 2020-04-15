@@ -5,7 +5,7 @@
             "name" : "Remote C/C++ GDB",
             "type" :"cppdbg",
             "request": "launch",
-            "program": "${workspaceRoot}/build/firmware.elf",
+            "program": "${workspaceRoot}/build/common/firmware.elf",
             "miDebuggerServerAddress": "localhost:4242",
             "args": [],
             "stopAtEntry": false,
