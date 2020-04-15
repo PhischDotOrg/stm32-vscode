@@ -12,8 +12,27 @@
             },
             "Release" : {
                 "short": "Release",
-                "long" : "Optimize Generated Code",
-                "buildType": "Release"
+                "long" : "Optimize Generated Code for Speed",
+                "buildType": "Release",
+                "settings": {
+                    "CMAKE_EXPORT_COMPILE_COMMANDS" : "ON"
+                }
+            },
+            "RelWithDebInfo" : {
+                "short": "RelWithDebInfo",
+                "long" : "Optimize Generated Code, but also emit Debug Info",
+                "buildType": "RelWithDebInfo",
+                "settings": {
+                    "CMAKE_EXPORT_COMPILE_COMMANDS" : "ON"
+                }
+            },
+            "MinSizeRel" : {
+                "short": "MinSizeRel",
+                "long" : "Optimize Generated Code for Size",
+                "buildType": "RelWithDebInfo",
+                "settings": {
+                    "CMAKE_EXPORT_COMPILE_COMMANDS" : "ON"
+                }
             }
         }
     },
