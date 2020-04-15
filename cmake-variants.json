@@ -26,6 +26,13 @@
                 "settings" : {
                     "STM32F4_BOARD" : "STM32F4_Discovery"
                 }
+            },
+            "STM32F4_Nucleo" : {
+                "short" : "STM32F4 Nucleo F411RE",
+                "long" : "Build for STM32F4 Nucleo F411RE Discovery Board",
+                "settings" : {
+                    "STM32F4_BOARD" : "STM32F4_Nucleo_F411RE"
+                }
             }
         }
     }
