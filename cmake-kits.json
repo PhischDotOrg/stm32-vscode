@@ -1,30 +1,9 @@
 [
       {
-        "name": "Generic STM32F4 (/bin)",
+        "name": "Generic STM32F4",
         "compilers": {
-          "C": "/bin/arm-none-eabi-gcc",
-          "CXX": "/bin/arm-none-eabi-g++"
-        }
-      },
-      {
-        "name": "Generic STM32F4 (/usr/bin)",
-        "compilers": {
-          "C": "/usr/bin/arm-none-eabi-gcc",
-          "CXX": "/usr/bin/arm-none-eabi-g++"
-        }
-      },
-      {
-        "name": "Generic STM32F4 (/usr/local/bin)",
-        "compilers": {
-          "C": "/usr/local/bin/arm-none-eabi-gcc",
-          "CXX": "/usr/local/bin/arm-none-eabi-g++"
-        }
-      },  
-      {
-        "name": "Generic STM32F4 (/opt)",
-        "compilers": {
-          "C": "/opt/bin/arm-none-eabi-gcc",
-          "CXX": "/opt/bin/arm-none-eabi-g++"
+          "C": "arm-none-eabi-gcc",
+          "CXX": "arm-none-eabi-g++"
         }
       },
       {
