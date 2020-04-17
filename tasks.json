@@ -4,8 +4,47 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Debug Console",
+            "type": "process",
+            "command": "cu",
+            "osx": {
+                "command": "sudo",
+                "args": [
+                    "cu",
+                    "-l", "/dev/tty.usbserial-FTC907JQ",
+                    "-s", "115200"
+                ]
+            },
+            "linux": {
+                "command": "cu",
+                "args": [
+                    "-f /dev/tty.usbserial",
+                    "-s 115200"
+                ]
+            },
+            "windows": {
+                "command": "",
+                "args": [
+                ]
+            },
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "options": {
+                "cwd": "${workspaceRoot}/build"
+            },
+            "problemMatcher": []
+        },
+        {
             "label": "Start OpenOCD (GDB Server)",
             "type": "process",
+            "command" : "true",
             "osx": {
                 "command": "make",
                 "args": [
