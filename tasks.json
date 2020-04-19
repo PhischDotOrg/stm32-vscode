@@ -18,8 +18,8 @@
             "linux": {
                 "command": "cu",
                 "args": [
-                    "-f /dev/tty.usbserial",
-                    "-s 115200"
+                    "-l", "/dev/ttyUSB0",
+                    "-s", "115200"
                 ]
             },
             "windows": {
