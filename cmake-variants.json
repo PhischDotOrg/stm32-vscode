@@ -29,7 +29,7 @@
             "MinSizeRel" : {
                 "short": "MinSizeRel",
                 "long" : "Optimize Generated Code for Size",
-                "buildType": "RelWithDebInfo",
+                "buildType": "MinSizeRel",
                 "settings": {
                     "CMAKE_EXPORT_COMPILE_COMMANDS" : "ON"
                 }
