@@ -57,7 +57,10 @@
             },
             "Host Build" : {
                 "short" : "Host Build",
-                "long" : "Build for with Host Compiler, e.g. for Continous Integration"
+                "long" : "Build for with Host Compiler, e.g. for Continous Integration",
+                "settings" : {
+                    "UNITTEST" : true
+                }
             }
         }
     }
