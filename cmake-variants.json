@@ -59,9 +59,19 @@
                 "short" : "Host Build",
                 "long" : "Build for with Host Compiler, e.g. for Continous Integration",
                 "settings" : {
-                    "UNITTEST" : true
+                    "UNITTEST" : true,
+                    "COVERAGE" : false
+                }
+            },
+            "Coverage" : {
+                "short" : "Coverage",
+                "long" : "Build for with Profiling / Code Coverage Support enabled",
+                "settings" : {
+                    "UNITTEST" : true,
+                    "COVERAGE" : true
                 }
             }
+
         }
     }
 }
