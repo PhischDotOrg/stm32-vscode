@@ -43,21 +43,10 @@
         },
         {
             "label": "Flash Target via OpenOCD",
-            "type": "process",
-            "command": "true",
-            "osx": {
-                "command" : "make",
-                "args": [
-                    "flash"
-                ]
-            },
-            "linux": {
-                "args": [
-                    "-f",
-                    "/usr/share/openocd/scripts/board/stm32f4discovery.cfg",
-                ]
-            },
+            "type" : "shell",
+            "command" : "echo program ${workspaceRoot}/build/common/firmware.elf verify reset | nc localhost 4444",
             "windows": {
+                "type": "process",
                 "args": [
                     "-f",
                     "c:\\Program Files\\openocd-0.10.0\\scripts\\board\\stm32f4discovery.cfg",
@@ -126,18 +115,7 @@
         {
             "label": "Stop OpenOCD (GDB Server)",
             "type": "shell",
-            "osx": {
-                "command": "killall",
-                "args": [
-                    "openocd"
-                ]
-            },
-            "linux": {
-                "command": "killall",
-                "args": [
-                    "openocd"
-                ]
-            },
+            "command": "echo \"shutdown\" | nc localhost 4444",
             "windows": {
                 "command": "killall",
                 "args": [
