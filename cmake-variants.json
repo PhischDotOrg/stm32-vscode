@@ -37,13 +37,20 @@
         }
     },
     "boardType" : {
-        "default" : "STM32F4",
+        "default" : "Cortex-M4",
         "choices" : {
-            "STM32F4" : {
-                "short" : "STM32F4",
-                "long" : "Build for STM32F4 Embedded Board",
+            "Cortex-M3" : {
+                "short" : "Cortex M3",
+                "long" : "Build for Cortex M3 based Embedded Board, e.g. STM32F1",
                 "settings" : {
-                    "CMAKE_TOOLCHAIN_FILE" : "${workspaceRoot}/common/Generic_STM32F4.ctools"
+                    "CMAKE_TOOLCHAIN_FILE" : "${workspaceRoot}/common/Generic_Cortex_M3.ctools"
+                }
+            },
+            "Cortex-M4" : {
+                "short" : "Cortex M4",
+                "long" : "Build for Cortex M4 based Embedded Board, e.g. STM32F4",
+                "settings" : {
+                    "CMAKE_TOOLCHAIN_FILE" : "${workspaceRoot}/common/Generic_Cortex_M4.ctools"
                 }
             },
             "Host Build" : {
