@@ -48,6 +48,35 @@
                 "exceptions": true
              },
            */
+        },
+        {
+            "name": "Black Magic Probe",
+            "type": "cppdbg",
+            "request": "launch",
+            /* "preLaunchTask": "build", */
+            "cwd": "${workspaceRoot}",
+            "MIMode": "gdb",
+            "targetArchitecture": "arm",
+            "logging": {
+                "engineLogging": true
+            },
+            "program": "${workspaceRoot}/build/common/firmware.elf",
+            "miDebuggerPath": "arm-none-eabi-gdb",
+            "customLaunchSetupCommands": [
+                { "text": "cd ${workspaceRoot}/build/common" },
+                { "text": "target extended-remote /dev/cu.usbmodem4D81905D1" },
+                { "text": "monitor swdp_scan" },
+                { "text": "attach 1" },
+                { "text": "file firmware.elf" },
+                { "text": "load" },
+                { "text": "cd ${workspaceRoot}" /* set bath back so VScode can find source files */ },
+                { "text": "set mem inaccessible-by-default off" },
+                { "text": "break main" }
+            ],
+            "serverLaunchTimeout": 10000,
+            "windows": {
+                "miDebuggerPath": "arm-none-eabi-gdb.exe"
+            }
         }
     ]
 }
