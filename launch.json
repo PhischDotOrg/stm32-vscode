@@ -57,12 +57,41 @@
             "type": "cortex-debug",
             "request": "launch",
             "servertype": "bmp",
-            "device": "STM32F401CC",
+            "device": "${input:TargetCpu}",
             "svdFile" : "${workspaceRoot}/build/common/STM32.svd",
             "executable": "${workspaceRoot}/build/common/firmware.elf",
             // "preLaunchTask": "build",
             "postLaunchCommands": [
                 "monitor traceswo"
+            ]
+        },
+        {
+            "request": "launch",
+            "type": "cortex-debug",
+            "name": "Segger J-Link",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceRoot}/build/common/firmware.elf",
+            "serverpath": "/Applications/SEGGER/JLink/JLinkGDBServerCLExe",
+            "servertype": "jlink",
+            "armToolchainPath": "/usr/local/bin/",
+            "device": "${input:TargetCpu}",
+            "interface": "swd",
+            //"serialNumber": "", //If you have more than one J-Link probe, add the serial number here.
+            // "jlinkscript":"${workspaceRoot}/BSP/SEGGER/K66FN2M0_emPower/Setup/Kinetis_K66_Target.js",
+            "runToMain": false,
+            "svdFile" : "${workspaceRoot}/build/common/STM32.svd"
+        }
+    ],
+    "inputs" : [
+        {
+            "id" : "TargetCpu",
+            "type" : "pickString",
+            "description": "STM32 Target CPU Type",
+            "options" : [
+                "STM32F103C8",
+                "STM32F401CC",
+                "STM32F407VG",
+                "STM32F411RE",
             ]
         }
     ]
