@@ -13,7 +13,7 @@
             "externalConsole": false,
             "MIMode": "lldb"
         },
-        {           
+        {
             "name" : "Remote C/C++ GDB",
             "type" :"cppdbg",
             "request": "launch",
@@ -82,7 +82,21 @@
             "svdFile" : "${workspaceRoot}/build/common/STM32.svd",
             "postLaunchCommands": [
                 "monitor SWO EnableTarget 0 0 0x101 0"
-            ]
+            ],
+            "swoConfig":{
+                "enabled":true,
+                "source":"probe",
+                "swoFrequency": 0, /* 0 = JLink Auto-Detection */
+                "cpuFrequency": 0, /* 0 = JLink Auto-Detection */
+                "decoders": [
+                    {
+                        "port": 0,
+                        "type": "console",
+                        "label": "SWO output",
+                        "encoding":"ascii"
+                    }
+                ]
+            }
         },
         {
             "request": "attach",
@@ -100,7 +114,21 @@
             "svdFile" : "${workspaceRoot}/build/common/STM32.svd",
             "postLaunchCommands": [
                 "monitor SWO EnableTarget 0 0 0x101 0"
-            ]
+            ],
+            "swoConfig":{
+                "enabled":true,
+                "source":"probe",
+                "swoFrequency": 0, /* 0 = JLink Auto-Detection */
+                "cpuFrequency": 0, /* 0 = JLink Auto-Detection */
+                "decoders": [
+                    {
+                        "port": 0,
+                        "type": "console",
+                        "label": "SWO output",
+                        "encoding":"ascii"
+                    }
+                ]
+            }
         }
     ],
     "inputs" : [
