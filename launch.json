@@ -68,7 +68,7 @@
         {
             "request": "launch",
             "type": "cortex-debug",
-            "name": "Segger J-Link",
+            "name": "Segger J-Link (Launch)",
             "cwd": "${workspaceRoot}",
             "executable": "${workspaceRoot}/build/common/firmware.elf",
             "serverpath": "/Applications/SEGGER/JLink/JLinkGDBServerCLExe",
@@ -79,7 +79,28 @@
             //"serialNumber": "", //If you have more than one J-Link probe, add the serial number here.
             // "jlinkscript":"${workspaceRoot}/BSP/SEGGER/K66FN2M0_emPower/Setup/Kinetis_K66_Target.js",
             "runToMain": false,
-            "svdFile" : "${workspaceRoot}/build/common/STM32.svd"
+            "svdFile" : "${workspaceRoot}/build/common/STM32.svd",
+            "postLaunchCommands": [
+                "monitor SWO EnableTarget 0 0 0x101 0"
+            ]
+        },
+        {
+            "request": "attach",
+            "type": "cortex-debug",
+            "name": "Segger J-Link (Attach)",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceRoot}/build/common/firmware.elf",
+            "serverpath": "/Applications/SEGGER/JLink/JLinkGDBServerCLExe",
+            "servertype": "jlink",
+            "armToolchainPath": "/usr/local/bin/",
+            "device": "${input:TargetCpu}",
+            "interface": "swd",
+            //"serialNumber": "", //If you have more than one J-Link probe, add the serial number here.
+            // "jlinkscript":"${workspaceRoot}/BSP/SEGGER/K66FN2M0_emPower/Setup/Kinetis_K66_Target.js",
+            "svdFile" : "${workspaceRoot}/build/common/STM32.svd",
+            "postLaunchCommands": [
+                "monitor SWO EnableTarget 0 0 0x101 0"
+            ]
         }
     ],
     "inputs" : [
