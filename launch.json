@@ -75,6 +75,7 @@
             "servertype": "jlink",
             "armToolchainPath": "/usr/local/bin/",
             "device": "${input:TargetCpu}",
+            "rtos": "/Applications/SEGGER/JLink/GDBServer/RTOSPlugin_FreeRTOS.dylib",
             "interface": "swd",
             //"serialNumber": "", //If you have more than one J-Link probe, add the serial number here.
             // "jlinkscript":"${workspaceRoot}/BSP/SEGGER/K66FN2M0_emPower/Setup/Kinetis_K66_Target.js",
@@ -90,7 +91,7 @@
                 "cpuFrequency": 0, /* 0 = JLink Auto-Detection */
                 "decoders": [
                     {
-                        "port": 0,
+                        "port": 8,
                         "type": "console",
                         "label": "SWO output",
                         "encoding":"ascii"
@@ -108,6 +109,7 @@
             "servertype": "jlink",
             "armToolchainPath": "/usr/local/bin/",
             "device": "${input:TargetCpu}",
+            "rtos": "/Applications/SEGGER/JLink/GDBServer/RTOSPlugin_FreeRTOS.dylib",
             "interface": "swd",
             //"serialNumber": "", //If you have more than one J-Link probe, add the serial number here.
             // "jlinkscript":"${workspaceRoot}/BSP/SEGGER/K66FN2M0_emPower/Setup/Kinetis_K66_Target.js",
@@ -122,7 +124,7 @@
                 "cpuFrequency": 0, /* 0 = JLink Auto-Detection */
                 "decoders": [
                     {
-                        "port": 0,
+                        "port": 8,
                         "type": "console",
                         "label": "SWO output",
                         "encoding":"ascii"
