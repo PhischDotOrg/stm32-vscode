@@ -86,6 +86,12 @@
         "complex": "cpp",
         "ios": "cpp",
         "locale": "cpp",
-        "*.tpp": "cpp"
+        "*.tpp": "cpp",
+        "any": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "numbers": "cpp",
+        "variant": "cpp",
+        "*.inc": "cpp"
     },
 }
