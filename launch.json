@@ -70,7 +70,7 @@
             "type": "cortex-debug",
             "name": "Segger J-Link (Launch)",
             "cwd": "${workspaceRoot}",
-            "executable": "${input:FirmwareElf}",
+            "executable": "${workspaceRoot}/build/common/firmware.elf",
             "servertype": "jlink",
             "device": "${input:TargetCpu}",
             "windows": {
@@ -166,15 +166,6 @@
                 "STM32F401CC",
                 "STM32F407VG",
                 "STM32F411RE",
-            ]
-        },
-        {
-            "id" : "FirmwareElf",
-            "type" : "pickString",
-            "description": "Firmware ELF File",
-            "options" : [
-                "build/common/firmware.elf",
-                "build/common/contrib/f1usb/src/f1usb-minimal.elf",
             ]
         }
 
